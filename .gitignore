@@ -1,0 +1,21 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+logs/
+*.log
+tmp/
+temp/
+backups/
+backup/
+*.bak
+*.swp
+*.tmp
+.DS_Store
+
+# Archivos privados o sensibles
+*.pem
+*.key
+*.crt
+*.p12

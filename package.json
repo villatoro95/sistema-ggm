@@ -1,0 +1,40 @@
+{
+  "name": "ccggm-sistema-academico",
+  "version": "1.0.0",
+  "description": "Sistema académico para CCGGM con Node.js, Express, MySQL y EJS.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:init": "node scripts/init-db.js",
+    "check": "node --check server.js"
+  },
+  "keywords": [
+    "academico",
+    "ccggm",
+    "nodejs",
+    "express",
+    "mysql",
+    "ejs"
+  ],
+  "author": "CCGGM",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.0",
+    "exceljs": "^4.1.11",
+    "express": "^4.21.2",
+    "express-mysql-session": "^3.1.0",
+    "express-rate-limit": "^7.15.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.0.0",
+    "helmet": "^8.0.0",
+    "mysql2": "^3.4.1",
+    "pdfkit": "^0.15.0"
+  }
+}

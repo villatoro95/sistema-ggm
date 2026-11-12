@@ -1,0 +1,37 @@
+function requireAuth(req, res, next) {
+  if (!req.session || !req.session.user) {
+    return res.redirect('/auth/login');
+  }
+  next();
+}
+
+function requireGuest(req, res, next) {
+  if (req.session && req.session.user) {
+    return res.redirect('/dashboard');
+  }
+  next();
+}
+
+function requireRole(role) {
+  return (req, res, next) => {
+    if (!req.session || !req.session.user) {
+      return res.redirect('/auth/login');
+    }
+
+    if (req.session.user.role !== role) {
+      return res.status(403).render('access-denied', {
+        title: 'Acceso denegado',
+        message: 'No tienes permisos para acceder a esta pantalla.',
+        currentUser: req.session.user
+      });
+    }
+
+    next();
+  };
+}
+
+module.exports = {
+  requireAuth,
+  requireGuest,
+  requireRole
+};
